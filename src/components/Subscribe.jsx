@@ -1,4 +1,5 @@
 import styles from "../style";
+import { register } from "../assets";
 
 const Subscribe = () => (
   <section
@@ -6,7 +7,7 @@ const Subscribe = () => (
     className={`flex md:flex-row flex-col ${styles.paddingY} justify-center`}
     style={{
       position: "relative",
-      backgroundImage: 'url("http://www.vpv.vn/images/register.jpg")',
+      backgroundImage: `url(${register})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
