@@ -1,35 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+/* eslint-disable no-unused-vars */
+import styles from "./style";
+import "tw-elements-react/dist/css/tw-elements-react.min.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+import {
+  Navbar,
+  Hero,
+  LatestNew,
+  AboutUs,
+  Galleries,
+  Subscribe,
+  Footer,
+} from "./components";
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+const App = () => (
+  <div className="bg-sky-700 w-full overflow-hidden">
+    <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`${styles.navWidth} `}>
+        <Navbar />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more :D
-      </p>
-    </>
-  )
-}
+    </div>
 
-export default App
+    <div className={`bg-white ${styles.flexStart}`}>
+      <div className={`${styles.boxWidth}`}>
+        <div className="absolute z-[0] w-[60%] h-[60%] -right-[50%] rounded-full blue__gradient" />
+        <div />
+        <div className="absolute z-[0] w-[60%] h-[60%] -left-[50%] rounded-full blue__gradient" />
+        <div />
+        <Hero />
+      </div>
+    </div>
+
+    <div className={`bg-white ${styles.paddingX} ${styles.flexStart}`}>
+      <hr style={{ color: "cyan", backgroundColor: "cyan", height: "2px" }} />
+      <div className={`${styles.boxWidth}`}>
+        <AboutUs />
+        <LatestNew />
+        <Galleries />
+      </div>
+    </div>
+
+    <div className={`bg-white ${styles.flexStart}`}>
+      <div className={`${styles.boxWidth}`}>
+        <Subscribe />
+      </div>
+    </div>
+    <div className={`bg-sky-700 ${styles.paddingX} ${styles.flexStart}`}>
+      <hr style={{ color: "cyan", backgroundColor: "cyan", height: "2px" }} />
+      <div className={`${styles.boxWidth}`}>
+        <Footer />
+      </div>
+    </div>
+  </div>
+);
+
+export default App;
